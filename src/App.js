@@ -1,12 +1,22 @@
 import React from 'react';
+import { BrowserRouter, Redirect, Route, Router, Switch } from 'react-router-dom';
 import './App.css';
-import Main from './SortingVisualizer/Main';
+import Body from './SortingVisualizer/body/Body';
 
 function App() {
   return (  
-    <React.Fragment>
-      <Main />
-    </React.Fragment>
+    <BrowserRouter>
+     <Switch>
+      <Route path="/visual-sorting" component={Body} />
+      <Redirect to="/visual-sorting" />
+     </Switch>
+    </BrowserRouter>
   );
 }
 export default App;
+
+
+// <Switch>
+// <Route path="/:sort" component={renderPage} />
+// <Route path="/" component={renderPage}/>
+// </Switch>

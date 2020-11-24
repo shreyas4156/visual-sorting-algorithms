@@ -1,0 +1,24 @@
+.array-bars {
+  padding-top: 7px;
+  display: inline-block;
+  margin: 0 1px;
+  background-color: blueviolet;
+}
+.container-array {
+  position: absolute;
+}
+
+#nav {
+  cursor: pointer;
+}
+
+#left {
+  float: left;
+}
+.nav {
+  margin-bottom: 20px;
+}
+.footer {
+  bottom: 0;
+  width: 100%;
+}

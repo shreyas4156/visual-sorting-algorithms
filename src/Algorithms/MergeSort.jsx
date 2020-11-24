@@ -18,9 +18,6 @@ function sort(array, low, high, animations)
 
 function merge(array, low, mid, high, animations)
 {
-    const n1 = mid-low+1;
-    const n2 = high-mid;
-
     let left =  [];
     let right = [];
 
