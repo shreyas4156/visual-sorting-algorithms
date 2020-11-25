@@ -5,9 +5,12 @@ import Body from './SortingVisualizer/body/Body';
 
 function App() {
   return (  
-   <div>
-     <Body />
-   </div>
+    <BrowserRouter>
+     <Switch>
+      <Route path="/visual-sorting" component={Body} />
+      <Redirect to="/visual-sorting" />
+     </Switch>
+    </BrowserRouter>
   );
 }
 export default App;
