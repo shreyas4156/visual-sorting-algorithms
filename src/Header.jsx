@@ -44,7 +44,7 @@ const Header = ({valueChange, resetArray, sort, changeAlgo}) => {
             >Bubble Sort</NavLink>  
             </NavItem>
             <NavItem>
-                <NavLink  id="nav" onClick={resetArray} >Generate new Array</NavLink>
+                <NavLink  id="nav" onClick={resetArray} >Generate new Bars</NavLink>
             </NavItem>
             { algo? <NavItem>
                 <NavLink className="sortIcon" style={{color:"#F4F4F4", borderBottomStyle:"solid"}} id="nav" onClick={()=>sort(algo)}>Sort</NavLink>

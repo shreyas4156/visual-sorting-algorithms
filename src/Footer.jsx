@@ -8,7 +8,7 @@ export const Footer = (props)=>
           <a href="https://github.com/shreyas4156" style={{color:"white"}} className="text-muted">Github</a>{" | "}
           <a href="https://www.linkedin.com/in/shreyas4156/" style={{color:"white"}} className="text-muted">Linkedin</a>
           <hr />
-          <span style={{color:"white"}} className="text-muted">Made with ❤ by Shreyas K S.</span>
+          <span style={{color:"white"}} className="text-muted">Built by Shreyas K S.</span>
         </div>
       </footer>
     )
