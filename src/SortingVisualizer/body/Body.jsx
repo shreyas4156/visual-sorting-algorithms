@@ -34,7 +34,7 @@ function Body({match}) {
     const primary = "blueviolet";
     const secondary = "#34FF07";
     const animations_speed = size>=10 && size<=30 
-                                ? 40
+                                ? 45
                                 : size>30 && size<=50
                                     ?15
                                     :10;
