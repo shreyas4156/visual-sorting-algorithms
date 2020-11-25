@@ -1,4 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+/public
+
+App.test.js
+logo.svg
+reportWebVitals.js
+setupTests.js
+.eslintcache
 
 # dependencies
 /node_modules
@@ -22,10 +29,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/public
-
-App.test.js
-logo.svg
-reportWebVitals.js
-setupTests.js
-.eslintcache
