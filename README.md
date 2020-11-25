@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# This Project Demonstrates how sorting algorithm works with the visual representaion
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## To install node modules
+
+Run this command on termial
+
+### `npm install`
 
 ## Available Scripts
 
