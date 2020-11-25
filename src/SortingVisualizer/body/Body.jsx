@@ -186,7 +186,7 @@ function Body({match}) {
                       <h1 className="display-3">{algo==="merge"? merge.name : algo==="quick"? quick.name: bubble.name}</h1>
                       <p className="lead">{algo==="merge"? merge.best : algo==="quick"? quick.best: bubble.best}</p>
                       <p className="lead">{algo==="merge"? merge.average : algo==="quick"? quick.average: bubble.average}</p>
-                      <p className="lead">{algo==="merge"? merge.average : algo==="quick"? quick.average: bubble.average}</p>
+                      <p className="lead">{algo==="merge"? merge.worst : algo==="quick"? quick.worst: bubble.worst}</p>
                     </Container>
                   </Jumbotron>: null
                 }
