@@ -22,3 +22,12 @@
   bottom: 0;
   width: 100%;
 }
+
+.sortIcon {
+  border-bottom: rgb(157, 36, 255);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.sortIcon:hover {
+  border-bottom: rgb(153, 153, 153);
+}

@@ -148,6 +148,7 @@ function Body({match}) {
             quickSort();
         else if(algo === "bubble")
             bubbleSort();
+        
        
      }
 

@@ -21,11 +21,13 @@ const Header = ({valueChange, resetArray, sort, changeAlgo}) => {
     changeAlgo(algo);
   })
   return (
-      <Navbar className="nav" color="dark" dark expand="md">
+      <Navbar className="nav" color="dark" dark expand="md sm">
+        <NavItem>
         <NavLink style={{color:"#F5F3F3"}} href="/">Graph Visualizer</NavLink>
+        </NavItem>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+          <Nav style={{textAlign:"center"}} className="mr-auto" navbar>
             <NavItem>
             <NavLink id="nav" className={algo === "merge" ? "active" : "notActive" }
               onClick={()=>handleClick("merge")  }
@@ -42,10 +44,10 @@ const Header = ({valueChange, resetArray, sort, changeAlgo}) => {
             >Bubble Sort</NavLink>  
             </NavItem>
             <NavItem>
-                <NavLink id="nav" onClick={resetArray} >Generate new Array</NavLink>
+                <NavLink  id="nav" onClick={resetArray} >Generate new Array</NavLink>
             </NavItem>
             { algo? <NavItem>
-                <NavLink id="nav" onClick={()=>sort(algo)}>Sort</NavLink>
+                <NavLink className="sortIcon" style={{color:"#F4F4F4", borderBottomStyle:"solid"}} id="nav" onClick={()=>sort(algo)}>Sort</NavLink>
             </NavItem>:null }
           </Nav>
             <RangeSlider
