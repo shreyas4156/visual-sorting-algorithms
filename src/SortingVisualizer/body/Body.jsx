@@ -33,11 +33,13 @@ function Body({match}) {
     }
     const primary = "blueviolet";
     const secondary = "#34FF07";
-    const animations_speed = size>=10 && size<=30 
-                                ? 45
-                                : size>30 && size<=50
-                                    ?15
-                                    :10;
+    const animations_speed = size>=10 && size<=20 
+                                ? 70
+                                : size>20 && size < 35
+                                ? 55
+                                : size>35 && size<=50
+                                    ?20
+                                    :15;
 
     useEffect(()=>{
         resetArray();
