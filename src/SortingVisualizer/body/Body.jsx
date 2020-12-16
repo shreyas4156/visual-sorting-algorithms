@@ -64,6 +64,7 @@ function Body({ algo, setAlgo, size, setSize, array, setArray }) {
 
   useEffect(() => {
     setArray(size);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //merge sort
@@ -140,7 +141,7 @@ function Body({ algo, setAlgo, size, setSize, array, setArray }) {
 
   const heapSort = () => {
     const animations = HeapSort(array);
-    // for (let i = 0; i < animations.length; i++) console.log(animations[i]);
+    //console.log(animations);
     for (let i = 0; i < animations.length; i++) {
       const [barOne, barTwo, changeColor] = animations[i];
       const arrayBar = document.getElementsByClassName("array-bars");

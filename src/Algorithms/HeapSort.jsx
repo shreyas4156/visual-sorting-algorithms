@@ -1,57 +1,46 @@
 export const HeapSort = (array) => {
   const animations = [];
-  sort(animations, 0, array.length - 1, array);
+  sort(animations, 0, array.length, array);
   return animations;
 };
 const sort = (
   animations,
   i,
-  j,
+  n,
   arr //O(n log n)
 ) => {
-  if (j === 0) return;
-  heapify(animations, j, arr);
-  animations.push([i, j, 0]);
-  animations.push([i, j, 1]);
-  animations.push([i, arr[j], 2]);
-  animations.push([j, arr[i], 2]);
-  let temp = arr[i];
-  arr[i] = arr[j];
-  arr[j] = temp;
-  sort(animations, i, j - 1, arr);
+  for (let i = n / 2 - 1; i >= 0; i--) heapify(animations, arr, n, i);
+
+  for (let i = n - 1; i > 0; i--) {
+    animations.push([0, i, 0]);
+    animations.push([0, i, 1]);
+    animations.push([0, arr[i], 2]);
+    animations.push([i, arr[0], 2]);
+    let temp = arr[0];
+    arr[0] = arr[i];
+    arr[i] = temp;
+    heapify(animations, arr, i, 0);
+  }
 };
 
-const heapify = (animations, j, arr) => {
+const heapify = (animations, arr, n, i) => {
   //O(n)
 
-  for (let k = j; k >= 0; k--) {
-    if (k * 2 + 1 > j) {
-      continue;
-    }
-    if (k * 2 + 2 <= j) {
-      if (arr[k * 2 + 2] > arr[k * 2 + 1]) {
-        if (arr[k] < arr[k * 2 + 2]) {
-          animations.push([k, k * 2 + 2, 0]);
-          animations.push([k, k * 2 + 2, 1]);
+  let largest = i;
+  let l = 2 * i + 1;
+  let r = 2 * i + 2;
+  if (l < n && arr[l] > arr[largest]) largest = l;
+  if (r < n && arr[r] > arr[largest]) largest = r;
 
-          animations.push([k, arr[k * 2 + 2], 2]);
-          animations.push([k * 2 + 2, arr[k], 2]);
+  if (largest !== i) {
+    animations.push([i, largest, 0]);
+    animations.push([i, largest, 1]);
+    animations.push([i, arr[largest], 2]);
+    animations.push([largest, arr[i], 2]);
+    let swap = arr[i];
+    arr[i] = arr[largest];
+    arr[largest] = swap;
 
-          let temp = arr[k];
-          arr[k] = arr[k * 2 + 2];
-          arr[k * 2 + 2] = temp;
-        }
-      } else {
-        if (arr[k] < arr[k * 2 + 1]) {
-          animations.push([k, k * 2 + 1, 0]);
-          animations.push([k, k * 2 + 1, 1]);
-          animations.push([k, arr[k * 2 + 1], 2]);
-          animations.push([k * 2 + 1, arr[k], 2]);
-          let temp = arr[k];
-          arr[k] = arr[k * 2 + 1];
-          arr[k * 2 + 1] = temp;
-        }
-      }
-    }
+    heapify(animations, arr, n, largest);
   }
 };
