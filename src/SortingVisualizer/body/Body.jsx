@@ -23,7 +23,6 @@ const mapDispatchToProps = (dispatch) => ({
   setSize: (size) => dispatch(setSize(size)),
   setArray: (size) => dispatch(setArray(size)),
 });
-
 function Body({ algo, setAlgo, size, setSize, array, setArray }) {
   const numWidth = Math.floor((window.innerWidth * 5) / (array.length * 10));
   const width = `${numWidth}px`;
@@ -66,6 +65,7 @@ function Body({ algo, setAlgo, size, setSize, array, setArray }) {
 
   useEffect(() => {
     setArray(size);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -143,7 +143,6 @@ function Body({ algo, setAlgo, size, setSize, array, setArray }) {
 
   const heapSort = () => {
     const animations = HeapSort(array);
-    console.log(animations);
     for (let i = 0; i < animations.length; i++) {
       const [barOne, barTwo, changeColor] = animations[i];
       const arrayBar = document.getElementsByClassName("array-bars");

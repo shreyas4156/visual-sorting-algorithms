@@ -7,6 +7,8 @@ import {
   NavItem,
   NavLink,
   NavbarText,
+  Modal,
+  ModalHeader,
 } from "reactstrap";
 import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css";
 import RangeSlider from "react-bootstrap-range-slider";
@@ -14,13 +16,24 @@ import RangeSlider from "react-bootstrap-range-slider";
 const Header = ({ valueChange, resetArray, sort, changeAlgo, algo, size }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState(50);
+  const [modal, setModal] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const handleClick = (str) => {
+    setModal(true);
+    setTimeout(() => {
+      setModal(false);
+    }, 15000);
     changeAlgo(str);
   };
-
+  const toggleModal = () => setModal(!modal);
   return (
     <Navbar className="nav" color="dark" dark expand="md sm">
+      <Modal isOpen={modal} toggle={toggleModal}>
+        <ModalHeader toggle={toggleModal}>
+          Tip: After clicking on "Sort" button, please don't try to click any
+          other buttons until the bars are sorted
+        </ModalHeader>
+      </Modal>
       <NavItem>
         <NavLink style={{ color: "#F5F3F3" }} href="/">
           Graph Visualizer

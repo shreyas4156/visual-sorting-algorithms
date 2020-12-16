@@ -30,7 +30,7 @@ function swap(input, indexA, indexB, animations) {
   input[indexB] = temp;
 }
 
-export function HeapSort(input) {
+export function HeapSort(input, ani) {
   let animations = [];
   arrLength = input.length;
 
@@ -43,5 +43,6 @@ export function HeapSort(input) {
     arrLength--;
     maxHeap(input, 0, animations);
   }
+
   return animations;
 }
