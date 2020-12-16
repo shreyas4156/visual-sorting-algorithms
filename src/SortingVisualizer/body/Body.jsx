@@ -141,7 +141,7 @@ function Body({ algo, setAlgo, size, setSize, array, setArray }) {
 
   const heapSort = () => {
     const animations = HeapSort(array);
-    //console.log(animations);
+    console.log(animations);
     for (let i = 0; i < animations.length; i++) {
       const [barOne, barTwo, changeColor] = animations[i];
       const arrayBar = document.getElementsByClassName("array-bars");
