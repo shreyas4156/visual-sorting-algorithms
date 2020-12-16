@@ -56,3 +56,7 @@ main {
 div {
   display: block;
 }
+.vl {
+  border-left: 1px solid black;
+  height: 40px;
+}
