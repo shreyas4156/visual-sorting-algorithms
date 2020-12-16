@@ -60,7 +60,7 @@ function Body({ algo, setAlgo, size, setSize, array, setArray }) {
       ? 55
       : size > 35 && size <= 50
       ? 20
-      : 15;
+      : 8;
 
   useEffect(() => {
     setArray(size);
